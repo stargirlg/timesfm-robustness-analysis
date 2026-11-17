@@ -34,14 +34,15 @@ with $\nu=2$ and $\gamma=2.5$. The Student-$t$ distribution has infinite theoret
 
 To reduce extreme observations without fine-tuning the forecasting model, the experiment applies a rolling Median–IQR clipping operation before inference:
 
-$$\widehat{x}_n = \operatorname{clip}\Big(x_n,\, M_w(x_n) - k\,\operatorname{IQR}_w(x_n),\, M_w(x_n) + k\,\operatorname{IQR}_w(x_n)\Big)$$
+$$\widehat{x}_n = \text{clip}\Big(x_n,\; M_w(x_n) - k\,\text{IQR}_w(x_n),\; M_w(x_n) + k\,\text{IQR}_w(x_n)\Big)$$
 
 where:
 - $M_w(x_n)$ is the rolling median.
-- $\operatorname{IQR}_w = Q_{0.75} - Q_{0.25}$ is the interquartile range.
+- $\text{IQR}_w = Q_{0.75} - Q_{0.25}$ is the interquartile range.
 - Window width: $w = 15$.
 - Clipping factor: $k = 2.0$.
-
+  
+  
 ## 3. Experimental setup
 
 | Setting | Value |
